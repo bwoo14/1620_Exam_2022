@@ -106,6 +106,7 @@ main {
   flex-grow: 0;
   gap: 20px;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 #display_all_contacts div {
