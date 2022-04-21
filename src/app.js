@@ -65,7 +65,8 @@ function loadContacts() { // Loads contacts into the page
 function openContact(evt) {
   const contactIDs = getContactIDs()
   if (contactIDs.includes(evt.target.id)) {
-    console.log(evt.target.id)
+    hideOrUnhideContacts()
+    
   }
 }
 
@@ -75,6 +76,15 @@ function getContactIDs() {
     contactIDs.push(contact.ID)
   }
   return contactIDs
+}
+
+function hideOrUnhideContacts() {
+  const currentDisplayAllContacts = document.querySelector('#display_all_contacts')
+  if (currentDisplayAllContacts.style.display === "none") {
+    currentDisplayAllContacts.style.display = "block";
+  } else {
+    currentDisplayAllContacts.style.display = "none";
+  }
 }
 
 
