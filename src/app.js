@@ -52,13 +52,29 @@ const contactsList = [
 ]
 
 const displayAllContacts = document.querySelector('#display_all_contacts')
+displayAllContacts.addEventListener('click', openContact)
 
-function loadContacts() {
+function loadContacts() { // Loads contacts into the page
   const contactCards = []
   for (const contact of contactsList) {
-    var newCard = `<div class='contact-card'><img src='./img/${contact.image}'></img> ${contact.name}`
+    var newCard = `<div id='${contact.ID}' class='contact-card'><img id='${contact.ID}' src='./img/${contact.image}'></img> ${contact.name}</div>`
     displayAllContacts.insertAdjacentHTML("afterbegin", newCard)
   }
+}
+
+function openContact(evt) {
+  const contactIDs = getContactIDs()
+  if (contactIDs.includes(evt.target.id)) {
+    console.log(evt.target.id)
+  }
+}
+
+function getContactIDs() {
+  const contactIDs = []
+  for (const contact of contactsList) {
+    contactIDs.push(contact.ID)
+  }
+  return contactIDs
 }
 
 
