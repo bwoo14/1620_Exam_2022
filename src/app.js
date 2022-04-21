@@ -66,7 +66,7 @@ function openContact(evt) {
   const contactIDs = getContactIDs()
   if (contactIDs.includes(evt.target.id)) {
     hideOrUnhideContacts()
-    
+    displayContact(evt.target.id)
   }
 }
 
@@ -84,6 +84,28 @@ function hideOrUnhideContacts() {
     currentDisplayAllContacts.style.display = "block";
   } else {
     currentDisplayAllContacts.style.display = "none";
+  }
+}
+
+function displayContact(id) {
+  const displaySingleContact = document.querySelector('#display_single_contact')
+  const contactToDisplay = findContact(id)
+
+  const contactHTML = 
+  `<div class='contact-display'>
+    <img src='./img/${contactToDisplay.image}'></img>
+    <h1>${contactToDisplay.name}</h1>
+    <p>${contactToDisplay.phone}<br>${contactToDisplay.email}</p>
+  </div>`
+
+  displaySingleContact.insertAdjacentHTML("afterbegin", contactHTML)
+}
+
+function findContact(id) {
+  for (const contact of contactsList) {
+    if (contact.ID == id) {
+      return contact
+    }
   }
 }
 
