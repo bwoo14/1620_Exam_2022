@@ -142,3 +142,7 @@ footer p {
   color: var(--grey);
   align-self: center;
 }
+
+.contact-display {
+  display: flex;
+}

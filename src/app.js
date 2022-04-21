@@ -81,7 +81,7 @@ function getContactIDs() {
 function hideOrUnhideContacts() {
   const currentDisplayAllContacts = document.querySelector('#display_all_contacts')
   if (currentDisplayAllContacts.style.display === "none") {
-    currentDisplayAllContacts.style.display = "block";
+    currentDisplayAllContacts.style.display = "inline-block";
   } else {
     currentDisplayAllContacts.style.display = "none";
   }
@@ -116,7 +116,7 @@ function findContact(id) {
 }
 
 function closeContact(evt) {
-  if (evt.target.id = 'cancel') {
+  if (evt.target.id == 'cancel') {
     currentDisplaySingleContact = document.querySelector('#display_single_contact')
     currentDisplaySingleContact.removeChild(currentDisplaySingleContact.children[0])
     hideOrUnhideContacts()
