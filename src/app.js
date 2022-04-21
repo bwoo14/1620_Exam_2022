@@ -57,7 +57,7 @@ displayAllContacts.addEventListener('click', openContact)
 function loadContacts() { // Loads contacts into the page
   const contactCards = []
   for (const contact of contactsList) {
-    var newCard = `<div id='${contact.ID}' class='contact-card'><img id='${contact.ID}' src='./img/${contact.image}'></img> ${contact.name}</div>`
+    var newCard = `<div id='${contact.ID}' class='contact-card'><img id='${contact.ID}' src='./img/${contact.image}'></img>${contact.name}</div>`
     displayAllContacts.insertAdjacentHTML("afterbegin", newCard)
   }
 }
@@ -81,7 +81,7 @@ function getContactIDs() {
 function hideOrUnhideContacts() {
   const currentDisplayAllContacts = document.querySelector('#display_all_contacts')
   if (currentDisplayAllContacts.style.display === "none") {
-    currentDisplayAllContacts.style.display = "inline-block";
+    currentDisplayAllContacts.style.display = "block";
   } else {
     currentDisplayAllContacts.style.display = "none";
   }
@@ -96,8 +96,10 @@ function displayContact(id) {
   `<div class='contact-display'>
     <span id='cancel' class="fa-solid fa-circle-xmark"></span>
     <img src='./img/${contactToDisplay.image}'></img>
-    <h1>${contactToDisplay.name}</h1>
-    <p>${contactToDisplay.phone}<br>${contactToDisplay.email}</p>
+    <div class='information'>
+      <h1>${contactToDisplay.name}</h1>
+      <p>${contactToDisplay.phone}<br>${contactToDisplay.email}</p>
+    </span>
   </div>`
 
 

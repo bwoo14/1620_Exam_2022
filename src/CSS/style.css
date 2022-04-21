@@ -26,8 +26,9 @@ img {
 /* styles */
 .container {
   /* display: flex; */
-
-
+  min-height: 100vh;
+  max-height: fit-content;
+  
   font-family: 'Inter', sans-serif;
   background-color: var(--white);
 }
@@ -128,6 +129,8 @@ main {
   font-size: 2rem;
   font-weight: 500;
   color: var(--black);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 footer {
@@ -145,4 +148,6 @@ footer p {
 
 .contact-display {
   display: flex;
+  justify-content: center;
 }
+
