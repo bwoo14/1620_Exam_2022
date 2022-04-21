@@ -81,9 +81,9 @@ function getContactIDs() {
 function hideOrUnhideContacts() {
   const currentDisplayAllContacts = document.querySelector('#display_all_contacts')
   if (currentDisplayAllContacts.style.display === "none") {
-    currentDisplayAllContacts.style.display = "block";
+    currentDisplayAllContacts.style.display = "flex"
   } else {
-    currentDisplayAllContacts.style.display = "none";
+    currentDisplayAllContacts.style.display = "none"
   }
 }
 
@@ -94,12 +94,12 @@ function displayContact(id) {
 
   const contactHTML = 
   `<div class='contact-display'>
-    <span id='cancel' class="fa-solid fa-circle-xmark"></span>
     <img src='./img/${contactToDisplay.image}'></img>
     <div class='information'>
       <h1>${contactToDisplay.name}</h1>
       <p>${contactToDisplay.phone}<br>${contactToDisplay.email}</p>
-    </span>
+    </div>
+    <span id='cancel' class="fa-solid fa-circle-xmark"></span>
   </div>`
 
 

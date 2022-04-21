@@ -60,7 +60,6 @@ header a {
   text-decoration: none;
   display: flex;
   justify-content: space-between;
-
   font-size: 2rem;
 }
 
@@ -148,6 +147,9 @@ footer p {
 
 .contact-display {
   display: flex;
-  justify-content: center;
+}
+.information {
+  margin: 10px;
+  font-size: 100px;
 }
 
