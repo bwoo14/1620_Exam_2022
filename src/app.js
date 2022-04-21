@@ -91,14 +91,20 @@ function displayContact(id) {
   const displaySingleContact = document.querySelector('#display_single_contact')
   const contactToDisplay = findContact(id)
 
+
   const contactHTML = 
   `<div class='contact-display'>
+    <span id='cancel' class="fa-solid fa-circle-xmark"></span>
     <img src='./img/${contactToDisplay.image}'></img>
     <h1>${contactToDisplay.name}</h1>
     <p>${contactToDisplay.phone}<br>${contactToDisplay.email}</p>
   </div>`
 
+
   displaySingleContact.insertAdjacentHTML("afterbegin", contactHTML)
+
+  const contactDiv = document.querySelector('.contact-display')
+  contactDiv.addEventListener("click", closeContact)
 }
 
 function findContact(id) {
@@ -106,6 +112,14 @@ function findContact(id) {
     if (contact.ID == id) {
       return contact
     }
+  }
+}
+
+function closeContact(evt) {
+  if (evt.target.id = 'cancel') {
+    currentDisplaySingleContact = document.querySelector('#display_single_contact')
+    currentDisplaySingleContact.removeChild(currentDisplaySingleContact.children[0])
+    hideOrUnhideContacts()
   }
 }
 
