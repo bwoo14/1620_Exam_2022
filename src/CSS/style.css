@@ -25,7 +25,7 @@ img {
 
 /* styles */
 .container {
-  display: flex;
+  /* display: flex; */
 
 
   font-family: 'Inter', sans-serif;
@@ -57,7 +57,8 @@ header li {
 
 header a {
   text-decoration: none;
-
+  display: flex;
+  justify-content: space-between;
 
   font-size: 2rem;
 }
@@ -120,6 +121,7 @@ main {
 #display_all_contacts img {
   height: 50%;
   margin: 10px;
+  border-radius: 50%;
 }
 
 #display_all_contacts p {
